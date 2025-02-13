@@ -7,12 +7,24 @@ import About from "./About";
 import user from "../data/user";
 console.log(user);
 
-function App() {
+const user = {
+  name: "Liza",
+  city: "New York",
+  color: "firebrick",
+  bio: "I made this!",
+  links: {
+    github: "https://github.com/liza",
+    linkedin: "https://www.linkedin.com/in/liza/"
+  }
+};
+
+function App(props) {
   return (
     <div>
       <NavBar />
-      <Home />
-      <About />
+      <Home name={user.name} city={user.city} color={user.color} />
+      <About bio={user}  links={user.links} />
+      
     </div>
   );
 }
